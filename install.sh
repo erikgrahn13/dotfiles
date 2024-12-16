@@ -23,19 +23,20 @@ if [[ -f "$HOME/.tmux.conf" || -L "$HOME/.tmux.conf" ]]; then
     mv "$HOME/.tmux.conf" "$HOME/.tmux.conf_org"
 fi
 echo "Creating symlink: ~/.tmux.conf -> $REPO_DIR/.tmux.conf"
-ln -s $REPO_DIR/.tmux.conf ~/.tmux.conf
+ln -s $REPO_DIR/.tmux.conf $HOME/.tmux.conf
 
 # Setup zsh
 if [ ! -d "$HOME/.oh-my-zsh" ] 
 then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
-
+$HOME
 if [[ -f "$HOME/.zshrc" || -L "$HOME/.zshrc" ]]; then
     echo "File .zshrc already exists. Backing it up as .zshrc_org."
     mv "$HOME/.zshrc" "$HOME/.zshrc_org"
 fi
 echo "Creating symlink: ~/.zshrc -> $REPO_DIR/.zshrc"
-ln -s $REPO_DIR/.zshrc ~/.zshrc
+ln -s $REPO_DIR/.zshrc $HOME/.zshrc
 
-echo "Creating symlink: ~/.oh-my-zsh/custom/themes/erik.zsh-theme -> $REPO/erik.zsh-theme
+echo "Creating symlink: $HOME/.oh-my-zsh/custom/themes/erik.zsh-theme -> $REPO/erik.zsh-theme"
+ln -s $REPO_DIR/erik.zsh-theme $HOME/.oh-my-zsh/custom/themes/erik.zsh-theme
