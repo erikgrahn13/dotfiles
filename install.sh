@@ -10,6 +10,11 @@ if ! command -v zsh &> /dev/null; then
     echo "Error: zsh is not installed."
 fi
 
+# Check if fzf is installed
+if ! command -v fzf &> /dev/null; then
+    echo "Error: fzf is not installed."
+fi
+
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 
 # Setup tmux
