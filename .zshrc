@@ -103,3 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # alias python=python3
+bindkey -M menuselect 'h' vi-backward-char    # Move left
+bindkey -M menuselect 'j' vi-down-line-or-history  # Move down
+bindkey -M menuselect 'k' vi-up-line-or-history    # Move up
+bindkey -M menuselect 'l' vi-forward-char   # Move right
