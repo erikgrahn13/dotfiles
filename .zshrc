@@ -107,3 +107,6 @@ bindkey -M menuselect 'h' vi-backward-char    # Move left
 bindkey -M menuselect 'j' vi-down-line-or-history  # Move down
 bindkey -M menuselect 'k' vi-up-line-or-history    # Move up
 bindkey -M menuselect 'l' vi-forward-char   # Move right
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
