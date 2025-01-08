@@ -1,0 +1,7 @@
+/* Change font for the entire vscode. Thi needs the
+    Custom CSS and JS loader extension (be5invis.vscode-custom-css).
+*/
+
+.windows {
+  font-family: 'Iosevka Nerd Font Mono', sans-serif;
+}
