@@ -54,5 +54,8 @@ if [[ -f "$HOME/.oh-my-zsh/custom/themes/erik.zsh-theme" || -L "$HOME/.oh-my-zsh
 then
     mv "$HOME/.oh-my-zsh/custom/themes/erik.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/erik.zsh-theme_org"
 fi
-echo "Creating symlink: $HOME/.oh-my-zsh/custom/themes/erik.zsh-theme -> $REPO/erik.zsh-theme"
+echo "Creating symlink: $HOME/.oh-my-zsh/custom/themes/erik.zsh-theme -> $REPO_DIR/erik.zsh-theme"
 ln -s $REPO_DIR/erik.zsh-theme $HOME/.oh-my-zsh/custom/themes/erik.zsh-theme
+
+echo "Creating symlink: $HOME/.config/vscode-custom-style.css -> $REPO_DIR/vscode-custom-style.css"
+ln -s $REPO_DIR/vscode-custom-style.css $HOME/.config/vscode-custom-style.css
