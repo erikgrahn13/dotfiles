@@ -5,3 +5,11 @@
 * {
   font-family: 'Iosevka Nerd Font Mono', sans-serif !important;
 }
+
+.monaco-workbench .part.titlebar > .titlebar-container > .titlebar-left > .window-appicon:not(.codicon) {
+  background-image: none !important;
+}
+
+.monaco-workbench .part.titlebar > .titlebar-container > .titlebar-right .window-controls-container {
+  display: none !important;
+}
