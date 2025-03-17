@@ -13,3 +13,91 @@
 .monaco-workbench .part.titlebar > .titlebar-container > .titlebar-right .window-controls-container {
   display: none !important;
 }
+
+/* Hide the xterm overview ruler */
+.xterm-decoration-overview-ruler {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Remove vertical scrollbar from split terminal */
+.terminal-wrapper .xterm-viewport::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+}
+
+.split-view-view .scrollbar.vertical {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+}
+
+/* Make the currently selected search match stand out */
+.xterm-screen .xterm-decoration-container div:last-child {
+  background-color: yellow !important;
+  color: black !important;
+  font-weight: bold !important;
+  /* border: 2px solid red !important; */
+  mix-blend-mode: difference !important;
+}
+
+/* .accessible-view {
+  width: 800px !important;
+  height: 600px !important;
+  font-size: 18px !important;
+} */
+
+/* ✅ Increase the accessible-view size */
+/* .accessible-view {
+  width: 800px !important;
+  height: 600px !important;
+}
+
+div[data-uri^="accessible-view"] .monaco-editor {
+  width: 100% !important;
+  height: 100% !important;
+} */
+
+/* Target the accessible-view monaco editor */
+ .accessible-view .monaco-editor {
+  width: 1200px !important;
+  /* height: 800px !important; */
+  max-width: 1200px !important;
+  /* max-height: 800px !important; */
+  /* overflow: hidden !important; */
+}
+
+.accessible-view .monaco-editor .overflow-guard {
+  width: 100% !important;
+  /* height: 100% !important; */
+}
+
+.accessible-view .monaco-editor .monaco-scrollable-element {
+  width: 100% !important;
+  /* height: 100% !important; */
+}
+
+.accessible-view .monaco-editor .monaco-editor-background {
+  width: 100% !important;
+  /* height: 100% !important; */
+}
+
+.accessible-view .monaco-editor .view-lines {
+  width: 100% !important;
+  /* height: 100% !important; */
+}
+
+/* .accessible-view .monaco-editor .view-line {
+  line-height: 1.4 !important;
+  font-size: 14px !important;
+}  */
+
+
+/* Hide the scrollbar in the Accessible View */
+.accessible-view .scrollbar {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0px !important;
+}
