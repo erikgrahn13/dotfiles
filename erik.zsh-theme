@@ -1,6 +1,23 @@
 if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="white"; fi
 
-PROMPT='[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}@%m %{$(echo -e "\e[38;5;099m")%}%B%c%b%{$reset_color%}]$(git_prompt_info)%(!.#.$) '
+# Detect OS and assign a symbol
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  OS_ICON=""          # Apple symbol
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  # You can customize this per distro (example shown for Ubuntu)
+  if grep -qi ubuntu /etc/os-release 2>/dev/null; then
+    OS_ICON=""        # Ubuntu symbol (from Nerd Fonts)
+  else
+    OS_ICON="🐧"        # Generic Linux penguin
+  fi
+elif [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
+  OS_ICON="󰍲"          # Windows symbol (Nerd Font)
+else
+  OS_ICON="💻"          # Default fallback
+fi
+
+PROMPT='[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%} %{$fg[magenta]%}$OS_ICON%{$reset_color%} %{$(echo -e "\e[38;5;099m")%}%B%c%b%{$reset_color%}]$(git_prompt_info)%(!.#.$) '
+# PROMPT='[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}@%m %{$(echo -e "\e[38;5;099m")%}%B%c%b%{$reset_color%}]$(git_prompt_info)%(!.#.$) '
 
 # git theming
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}(%{$fg_no_bold[yellow]%}%B"
