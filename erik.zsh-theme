@@ -16,7 +16,9 @@ else
   OS_ICON="💻"          # Default fallback
 fi
 
-PROMPT='[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%} %{$fg[magenta]%}$OS_ICON%{$reset_color%} %{$(echo -e "\e[38;5;099m")%}%B%c%b%{$reset_color%}]$(git_prompt_info)%(!.#.$) '
+PROMPT='
+[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%} %{$fg[magenta]%}$OS_ICON%{$reset_color%} %{$(echo -e "\e[38;5;099m")%}%B%c%b%{$reset_color%}]$(git_prompt_info)
+%(?.%F{green}%B.%F{red}%B)❯%b%f '
 # PROMPT='[%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}@%m %{$(echo -e "\e[38;5;099m")%}%B%c%b%{$reset_color%}]$(git_prompt_info)%(!.#.$) '
 
 # git theming
