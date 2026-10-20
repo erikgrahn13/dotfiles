@@ -120,15 +120,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # socket=$(ls -1t /run/user/$UID/vscode-ipc-*.sock 2> /dev/null | head -1)
 # export VSCODE_IPC_HOOK_CLI=${socket}
-alias ls='gls --color=auto'  # Use GNU ls instead of macOS ls
+#alias ls='gls --color=auto'  # Use GNU ls instead of macOS ls
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# Auto-sync VS Code variables in tmux
-if [ -n "$TMUX" ]; then
-    # Get the latest VSCODE_IPC_HOOK_CLI from tmux environment
-    TMUX_VSCODE=$(tmux show-environment VSCODE_IPC_HOOK_CLI 2>/dev/null | cut -d= -f2-)
-    if [ -n "$TMUX_VSCODE" ]; then
-        export VSCODE_IPC_HOOK_CLI="$TMUX_VSCODE"
-    fi
-fi
