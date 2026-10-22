@@ -1,0 +1,5 @@
+## Add this belof cronjob with
+crontab -e : skapa eller redigera cronjobs
+crontab -l : lista aktiva cronjobs
+
+*/15 * * * * /usr/bin/zsh "$HOME/.config/tmux/prune-vsct.zsh" >> "$HOME/.config/tmux/prune-vsct.log" 2>&1
